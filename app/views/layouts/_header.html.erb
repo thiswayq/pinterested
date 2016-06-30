@@ -4,9 +4,12 @@
       <a class="navbar-brand" href="#">Pinterested</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About Me", about_path %></li>
-      <li><a href="#">Page 3</a></li>
+      <li class="<%= yield(:home) %>"><%= link_to "Home", root_path %></li>
+      <li class="<%= yield(:about) %>"><%= link_to "About Me", about_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="<%= yield(:login) %>"><%= link_to "Log in", new_user_session_path %></li>
+      <li class="<%= yield(:signin) %>"><%= link_to "Sign in",  new_user_registration_path %></li>
     </ul>
   </div>
 </nav>
