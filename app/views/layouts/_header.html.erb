@@ -8,8 +8,13 @@
       <li class="<%= yield(:about) %>"><%= link_to "About Me", about_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <% if !current_user.present? %>
       <li class="<%= yield(:login) %>"><%= link_to "Log in", new_user_session_path %></li>
-      <li class="<%= yield(:signin) %>"><%= link_to "Sign in",  new_user_registration_path %></li>
+      <li class="<%= yield(:signup) %>"><%= link_to "Sign up", new_user_registration_path %></li>
+      <% else %>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <li class="<%= yield(:edit) %>"><%= link_to "Edit User", edit_user_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
