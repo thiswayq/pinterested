@@ -6,6 +6,7 @@
     <ul class="nav navbar-nav">
       <li class="<%= yield(:home) %>"><%= link_to "Home", root_path %></li>
       <li class="<%= yield(:about) %>"><%= link_to "About Me", about_path %></li>
+      <li class="<%= yield(:pins) %>"><%= link_to "Pins", pins_path%></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if !current_user.present? %>
