@@ -11,7 +11,7 @@
         <div class="panel-body">
         <strong>Description: </strong><%= link_to (pin.description), pin %>
         <strong>Creator: </strong><%= pin.user.username %><br/>
-      </div>
+        </div>
         <% if pin.user == current_user %>
         <div class="panel-footer">
         <%= link_to 'Edit', edit_pin_path(pin) %>
