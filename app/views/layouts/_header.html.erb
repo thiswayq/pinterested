@@ -2,11 +2,12 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to "Pinterested", root_path, class: "navbar-brand"%>
-    <ul class="nav navbar-nav">
-      <li class="<%= yield(:home) %>"><%= link_to "Home", root_path %></li>
-      <li class="<%= yield(:about) %>"><%= link_to "About Me", about_path %></li>
-      <li class="<%= yield(:pins) %>"><%= link_to "New Pin", new_pin_path%></li>
-    </ul>
+        <ul class="nav navbar-nav">
+          <li class="<%= yield(:home) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= yield(:about) %>"><%= link_to "About Me", about_path %></li>
+          <li class="<%= yield(:pins) %>"><%= link_to "New Pin", new_pin_path%></li>
+        </ul>
+  </div>
     <ul class="nav navbar-nav navbar-right">
       <% if !current_user.present? %>
       <li class="<%= yield(:login) %>"><%= link_to "Log in", new_user_session_path %></li>
